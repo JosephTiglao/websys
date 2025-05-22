@@ -9,4 +9,7 @@ Route::get('/', function () {
 });
 
 Route::get('/weather', [WeatherController::class, 'getWeather']);
-Route::get('/routes', [RouteController::class, 'getRouteSteps']);
+Route::get('/route', function () {
+    return view('route');
+})->name('route');
+Route::post('/routes', [RouteController::class, 'getRouteSteps']);
